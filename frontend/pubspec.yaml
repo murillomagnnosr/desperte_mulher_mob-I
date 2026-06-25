@@ -1,0 +1,71 @@
+name: desperte_mulher
+description: "Desperte Mulher — plataforma de análise de risco para mulheres em situação de violência (Projeto Final / TCC)."
+publish_to: "none"
+version: 1.0.0+1
+
+environment:
+  # withValues()/CardThemeData exigem Flutter 3.27+ (Dart 3.6+).
+  sdk: ">=3.6.0 <4.0.0"
+  flutter: ">=3.27.0"
+
+dependencies:
+  flutter:
+    sdk: flutter
+
+  # --- Gerência de estado (BLoC/Cubit) ---------------------------------------
+  # Estado previsível e testável; separa eventos -> estados da UI.
+  flutter_bloc: ^8.1.6
+  # Comparação de valor sem boilerplate (states/entidades imutáveis).
+  equatable: ^2.0.5
+
+  # --- Navegação --------------------------------------------------------------
+  # Roteamento declarativo baseado em URL, essencial para a versão Web e
+  # deep links; suporta guards/redirect (proteção de rotas).
+  go_router: ^14.2.7
+
+  # --- Rede / HTTP ------------------------------------------------------------
+  # Cliente HTTP robusto com interceptors (JWT, logs, refresh token).
+  dio: ^5.7.0
+
+  # --- Injeção de dependências ------------------------------------------------
+  # Service Locator (inversão de dependência — "D" do SOLID).
+  get_it: ^7.7.0
+  # Geração automática do grafo de dependências via anotações.
+  injectable: ^2.4.4
+
+  # --- UI / Recursos visuais --------------------------------------------------
+  flutter_svg: ^2.0.10+1 # ícones/ilustrações vetoriais nítidos em qualquer DPI
+  cached_network_image: ^3.4.1 # cache de imagens remotas (parceiros, observatório)
+  google_fonts: ^6.2.1 # Poppins + Inter sem empacotar fontes manualmente
+
+  # --- Responsividade ---------------------------------------------------------
+  responsive_framework: ^1.5.1 # breakpoints MOBILE/TABLET/DESKTOP + autoscale
+  flutter_screenutil: ^5.9.3 # escala fina de tamanhos a partir de um design base
+
+  # --- Serialização -----------------------------------------------------------
+  json_annotation: ^4.9.0 # anotações para (de)serialização dos Models/DTOs
+
+  # --- Internacionalização / formatação --------------------------------------
+  intl: ^0.19.0 # datas, números e base para i18n (PT/ES/EN)
+
+  # --- Persistência local -----------------------------------------------------
+  shared_preferences: ^2.3.2 # tokens JWT, tema, idioma
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  integration_test:
+    sdk: flutter
+
+  flutter_lints: ^4.0.0 # regras de lint recomendadas
+  build_runner: ^2.4.13 # roda os geradores de código
+  injectable_generator: ^2.6.2 # gera o grafo do get_it/injectable
+  json_serializable: ^6.8.0 # gera (de)serialização JSON
+  bloc_test: ^9.1.7 # utilidades para testar Cubits/Blocs
+  mocktail: ^1.0.4 # mocks para testes unitários
+
+flutter:
+  uses-material-design: true
+  assets:
+    - assets/images/
+    - assets/icons/
