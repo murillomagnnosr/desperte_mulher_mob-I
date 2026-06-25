@@ -30,3 +30,6 @@ backend/node_modules/
 backend/.env
 backend/coverage/
 backend/dist/
+
+# === Documentação (mantida apenas localmente, fora do git) ===
+docs/
