@@ -32,19 +32,8 @@ nível de risco respondendo a um questionário; recebe uma **classificação**
 - ☎️ **Contatos de emergência** (180 / 190 / Ouvidoria)
 - 🌗 Tema híbrido acessível (WCAG AA) · 📱 Responsivo (Web + Mobile)
 
-## 3. Capturas de tela
 
-Os prints ficam em [`docs/screenshots/`](docs/screenshots). Para gerar: rode o
-app (`flutter run -d chrome` ou no emulador) e capture as telas Home,
-Questionário, Resultado e Painel. Depois descomente o bloco abaixo:
-
-<!--
-| Home | Questionário | Resultado |
-|------|--------------|-----------|
-| ![Home](docs/screenshots/home.png) | ![Questionário](docs/screenshots/perguntas.png) | ![Resultado](docs/screenshots/resultado.png) |
--->
-
-## 4. Tecnologias
+## 3. Tecnologias
 
 | Camada | Tecnologias |
 |--------|-------------|
@@ -53,7 +42,7 @@ Questionário, Resultado e Painel. Depois descomente o bloco abaixo:
 | Arquitetura | Clean Architecture · SOLID · Repository Pattern · Injeção de Dependência · Modularização |
 | Deploy | Vercel/Firebase (web) · Render/Railway (API) · Supabase (DB) |
 
-## 5. Arquitetura
+## 4. Arquitetura
 
 ```mermaid
 flowchart LR
@@ -72,39 +61,8 @@ No frontend, **Clean Architecture** por módulo (Presentation / Domain / Data); 
 backend, camadas (Routes → Middlewares → Controllers → Services → Repositories).
 Detalhes e mais diagramas em [docs/03-arquitetura.md](docs/03-arquitetura.md).
 
-## 6. Instalação
 
-```bash
-# Pré-requisitos: Flutter 3.27+, Node 18+, PostgreSQL (ou Supabase)
-git clone https://github.com/murillomagnnosr/desperte_mulher_mob-I.git
-cd desperte_mulher_mob-I
-cd frontend && flutter pub get && cd ..
-cd backend  && npm install && cp .env.example .env   # ajuste o .env
-```
-
-## 7. Execução
-
-```bash
-# Frontend (mock, sem backend)
-cd frontend && flutter run -d chrome
-# Frontend consumindo a API real
-flutter run -d chrome --dart-define=USE_MOCK=false
-# Android (emulador ou device)
-flutter run
-
-# Backend
-cd backend && npm run migrate && npm run seed && npm run dev
-
-# Testes
-cd frontend && flutter test     # 6 testes
-```
-
-## 8. Deploy
-
-Vercel/Firebase (web) · Render/Railway (API) · Supabase (banco). Passo a passo
-em [docs/16-deploy.md](docs/16-deploy.md).
-
-## 9. Estrutura de pastas
+## 5. Estrutura de pastas
 
 ```text
 desperte_mulher_mob-I/
@@ -113,13 +71,13 @@ desperte_mulher_mob-I/
 └── backend/     # API Express (src/{routes,controllers,services,repositories,middlewares,database})
 ```
 
-## 10. Fluxo do sistema
+## 6. Fluxo do sistema
 
 `Home → (Termos) → Questionário → Resultado → Rede de apoio`, e
 `Login do Acolhe → Painel` (protegido). Sequência técnica em
 [docs/12-integracao.md](docs/12-integracao.md).
 
-## 11. Documentação (por etapa)
+## 7. Documentação (por etapa)
 
 | Etapa | Documento |
 |------|-----------|
@@ -136,7 +94,7 @@ desperte_mulher_mob-I/
 | 17 | [Roteiro de apresentação (banca)](docs/17-roteiro-apresentacao.md) |
 | — | [Progresso das 17 etapas](docs/PROGRESSO.md) |
 
-## 12. Conclusão
+## 8. Conclusão
 
 Sistema **profissional, limpo, testável e responsivo**, que moderniza a
 experiência sem alterar a lógica que protege vidas. A arquitetura
